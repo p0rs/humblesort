@@ -3,7 +3,7 @@
  * @returns {number[]}
  */
 function humbleSort(arr) {
-  let swapped = 0, iter = 0, sorted = false;
+  let swapped = 0, sorted = false;
   while (!sorted) {
     sorted = true;
     for (let i = arr.length - 1; i > 0; i--) {
