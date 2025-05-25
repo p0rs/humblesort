@@ -1,21 +1,27 @@
 /**
+ * 
  * @param {number[]} arr 
  * @returns {number[]}
  */
 function humbleSort(arr) {
   let sorted = false;
   while (!sorted) {
+    let index = arr.length - 1, value = arr[index]; 
     sorted = true;
-    for (let i = arr.length - 1; i > 0; i--) {
-      if (arr[i - 1] > arr[i]) {
-        arr.push(...arr.splice(i - 1, 1));
+    while (index > 0) {
+      let cmpIndex = index - 1; 
+      let cmpValue = arr[cmpIndex];
+      if (cmpValue > value) {
+        arr.splice(cmpIndex, 1); 
+        arr.push(cmpValue);
         sorted = false;
-      }
+      } 
+      value = cmpValue;
+      index--;
     }
   }
   return arr;
 }
-
 
 /* Test */
 function getRandomIntArray(n, min, max) {
